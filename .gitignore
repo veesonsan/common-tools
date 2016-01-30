@@ -19,15 +19,7 @@ target/*
 hs_err_pid*
 .idea/*
 /.idea/*
-/*.iml
-/common-tools-commons/*.iml
-/common-tools-web/*.iml
-/common-tools-core/*.iml
-/common-tools-dataaccess/*.iml
-/common-tools-commons/common-tools-commons.iml
-/common-tools-core/common-tools-core.iml
-/common-tools-web/common-tools-web.iml
-/common-tools-dataaccess/common-tools-dataaccess.iml
-/.idea
+*.iml
+*.log
 
 # Created by .ignore support plugin (hsz.mobi)
