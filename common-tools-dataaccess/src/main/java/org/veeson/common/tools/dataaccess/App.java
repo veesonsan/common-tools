@@ -1,4 +1,4 @@
-package org.veeson;
+package org.veeson.common.tools.dataaccess;
 
 /**
  * Hello world!

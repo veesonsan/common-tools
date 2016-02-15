@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:cache="http://www.springframework.org/schema/cache"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-3.1.xsd
+		http://www.springframework.org/schema/tx
+		http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+		http://www.springframework.org/schema/mvc
+		http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+		http://www.springframework.org/schema/cache 
+    	http://www.springframework.org/schema/cache/spring-cache.xsd">
+
+	<!-- 默认的注解映射的支持 -->
+	<mvc:annotation-driven>
+		<mvc:return-value-handlers>
+			<!-- 添加统一返回值的处理器 -->
+			<bean class="com.sztx.se.web.handler.CommonMethodReturnValueHandler" />
+		</mvc:return-value-handlers>
+	</mvc:annotation-driven>
+	
+	<!-- 添加统一异常处理器 -->
+	<bean class="com.sztx.se.web.handler.CommonExceptionHandler">
+	</bean>
+	
+	<!-- 拦截器 -->
+<!-- 	<mvc:interceptors> -->
+<!-- 		<mvc:interceptor> -->
+<!-- 			<mvc:mapping path="/**" /> -->
+<!-- 			<bean class="com.sztx.se.web.interceptor.LogInterceptor"> -->
+<!-- 				<property name="openLog" value="true" /> -->
+<!-- 			</bean> -->
+<!-- 		</mvc:interceptor> -->
+<!-- 	</mvc:interceptors> -->
+	
+	<!-- defaultServlet负责对静态资源文件的访问 -->
+<!-- 	<mvc:default-servlet-handler /> -->
+
+
+	<bean
+		class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping" />
+	<bean
+		class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
+
+	<!-- 配置文件上传支持 -->
+<!-- 	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" -->
+<!-- 		p:defaultEncoding="utf-8" /> -->
+
+	<!-- velocity视图解析配置 -->
+<!-- 	<bean id="velocityConfig" class="org.springframework.web.servlet.view.velocity.VelocityConfigurer"> -->
+<!-- 		<property name="configLocation"> -->
+<!-- 			<value>classpath:velocity.properties</value> -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
+
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/"/>
+        <property name="suffix" value=".html"/>
+    </bean>
+	
+</beans>
